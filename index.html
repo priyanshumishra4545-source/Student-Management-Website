@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Management System</h1>
+        <p>DSA Based Student Record Management</p>
+    </header>
+
+    <main>
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <h2>Dashboard</h2>
+
+            <div class="dashboard-cards">
+
+                <div class="card">
+                    <h3>Total Students</h3>
+                    <p id="dashboardTotal">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Average Marks</h3>
+                    <p id="dashboardAverage">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Highest Marks</h3>
+                    <p id="dashboardHighest">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Passed</h3>
+                    <p id="dashboardPassed">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Failed</h3>
+                    <p id="dashboardFailed">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add Student -->
+        <section class="student-form">
+
+            <h2>Add Student</h2>
+
+            <form id="studentForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter Student Name"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="roll"
+                    placeholder="Enter Roll Number"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="marks"
+                    placeholder="Enter Marks"
+                    min="0"
+                    max="100"
+                    required
+                >
+
+                <button type="submit">Add Student</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Student Records -->
+        <section class="student-list">
+
+            <h2>Student Records</h2>
+
+            <div class="controls">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by name or roll number"
+                >
+
+                <button onclick="searchStudent()">Search</button>
+
+                <button onclick="showAllStudents()">Show All</button>
+
+                <button onclick="highestMarks()">Highest Marks</button>
+
+                <button onclick="lowestMarks()">Lowest Marks</button>
+
+                <button onclick="averageMarks()">Average Marks</button>
+
+                <button onclick="sortStudents()">Sort by Marks</button>
+
+                <button onclick="clearAllStudents()" class="danger">
+                    Clear All
+                </button>
+
+            </div>
+
+            <p id="totalStudents">Total Students: 0</p>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Marks</th>
+                            <th>Grade</th>
+                            <th>Result</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
